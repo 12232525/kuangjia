@@ -6,7 +6,7 @@
  * Time: 17:23
  */
 require 'model.php';
-dd('fderwf');
+
 ?>
 
 
