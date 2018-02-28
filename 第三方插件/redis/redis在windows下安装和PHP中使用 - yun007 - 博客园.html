@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://www.cnblogs.com/yun007/p/3705353.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>redis在windows下安装和PHP中使用 - yun007 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/bundle-sea.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/bundle-sea-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/yun007/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/yun007/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/yun007/wlwmanifest.xml">
+<script async="" src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/analytics.js"></script><script type="text/javascript" src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/encoder.js"></script><script src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'yun007', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/yun007/">Coding 是一种信仰</a><br>
+		
+	</div>
+</div>
+
+</div>
+
+<div id="mytopmenu">
+	
+		<div id="mylinks"><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a> &nbsp;
+<a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/yun007/">首页</a> &nbsp;
+<a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a> &nbsp;
+<a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/yun007">联系</a> &nbsp;
+<a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/yun007/rss">订阅</a><a id="blog_nav_rss_image" href="http://www.cnblogs.com/yun007/rss"><img src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/xml.gif" alt="订阅"></a>&nbsp;
+<a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a>
+</div>
+		<div id="mystats"><div id="blog_stats">
+随笔-100&nbsp;
+评论-16&nbsp;
+文章-0&nbsp;
+<!--trackbacks-0-->
+</div></div>
+	
+</div>
+<div id="centercontent">
+	
+<div id="post_detail">
+<div class="post">
+	<h1 class="postTitle"><a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/yun007/p/3705353.html">redis在windows下安装和PHP中使用</a></h1>
+	<div id="cnblogs_post_body" class="blogpost-body"><h1 class="postTitle"><a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/linjiqin/archive/2013/05/27/3101694.html">windows下安装redis</a>&nbsp;</h1>
+<div id="cnblogs_post_body">
+<p><strong>1、redis简介</strong><br>redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set --有序集合)和hashs（哈希类型）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同方式的排序。与memcached一样，为了保证效率，数据都是缓存在内存中。<span>区别的是redis会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了master-slave(主从)同步。</span></p>
+<p>Redis 是一个高性能的key-value数据库。 redis的出现，很大程度补偿了memcached这类key/value存储的不足，在部分场合可以对关系数据库起到很好的补充作用。它提供了Python，Ruby，Erlang，PHP客户端，使用很方便。</p>
+<p><strong>2、windows下安装redis</strong><br>下载地址<a href="https://github.com/dmajkic/redis/downloads" target="_blank">https://github.com/dmajkic/redis/downloads</a>。下载到的Redis支持32bit和64bit。根据自己实际情况选择，我选择32bit。把32bit文件内容拷贝到需要安装的目录下,比如：D:\dev\redis-2.4.5。</p>
+<p>打开一个cmd窗口，使用cd命令切换到指定目录（D:\dev\redis-2.4.5）运行<span>&nbsp;redis-server.exe redis.conf</span>&nbsp;。运行以后出现如下界面。<br><img src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/27152838-1d64c3178a504a1dab2c48e270703104.png" alt=""><br>这就说明Redis服务端已经安装成功。</p>
+<p>重新打开一个cmd窗口，使用cd命令切换到指定目录（D:\dev\redis-2.4.5）运行<span>&nbsp;redis-cli.exe -h 127.0.0.1 -p 6379</span>，其中 127.0.0.1是本地ip，6379是redis服务端的默认端口。运行成功如下图所示。<br>这样，Redis windows环境下搭建已经完成，是不是很简单。<br><img src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/27152846-f394a6eb01ad41ba92989d571f34d211.png" alt=""><br>这样，Redis windows环境下搭建已经完成，是不是很简单。</p>
+<p>环境已经搭建好，总得测试下吧。比如：存储一个key为test，value为hello word的字符串，然后获取key值。<br><img src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/27152856-ead450e5a5dd408f957012d219bf0247.png" alt=""><br>正确输出 hell word，测试成功！</p>
+<p>&nbsp;</p>
+<p><strong>3、PHP中使用</strong></p>
+<p>下载 dll文件</p>
+<p><span style="color: #0000ff;">http://download.csdn.net/download/bluesky321/5355093</span></p>
+<p>php_redis.dll 扩展 For PHP5.4.x</p>
+<p>&nbsp;</p>
+<p>PHP5.4.x 的 redis 扩展 php_redis.dll</p>
+<p>测试平台：Windows XPx32 (FastCGI PHP5.4.9 Nginx 1.4.0)</p>
+<p>&nbsp;</p>
+<p>包含 Non Thread Safe 和 Thread Safe 两个版本</p>
+<p>&nbsp;</p>
+<p>首先把php_redis.dll 和 php_igbinary.dll 放入PHP的ext文件夹，然后在php.ini配置文件里添加如下代码：</p>
+<p>&nbsp;</p>
+<p>extension=php_igbinary.dll</p>
+<p>extension=php_redis.dll</p>
+<p>&nbsp;</p>
+<p>重启web服务器</p>
+<p>&nbsp;</p>
+<p>注意：extension=php_igbinary.dll一定要放在extension=php_redis.dll的前面，否则此扩展不会生效</p>
+<p><strong>4、PHP中使用</strong></p>
+<p>代码如下</p>
+<div class="cnblogs_code">
+<pre>&lt;?<span style="color: #000000;">php
+    </span><span style="color: #800080;">$redis</span> = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Redis();
+    </span><span style="color: #800080;">$redis</span>-&gt;connect('127.0.0.1',6379<span style="color: #000000;">);
+    </span><span style="color: #800080;">$redis</span>-&gt;set('test','hello redis'<span style="color: #000000;">);
+    </span><span style="color: #0000ff;">echo</span> <span style="color: #800080;">$redis</span>-&gt;get('test'<span style="color: #000000;">);
+</span>?&gt;</pre>
+</div>
+<p>输出 hello &nbsp;redis 成功!</p>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/yun007/category/575814.html" target="_blank">redis</a>,<a href="http://www.cnblogs.com/yun007/category/575815.html" target="_blank">缓存</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(3705353,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;bb01da0d-00c1-e111-aa3f-842b2b196315&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/yun007/" target="_blank"><img src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/yun007/">yun007</a><br>
+            <a href="http://home.cnblogs.com/u/yun007/followees">关注 - 6</a><br>
+            <a href="http://home.cnblogs.com/u/yun007/followers">粉丝 - 16</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;bb01da0d-00c1-e111-aa3f-842b2b196315&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(3705353,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(3705353,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/yun007/p/3699789.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/yun007/p/3699789.html" title="发布于2014-04-29 17:37">memcached在windows7上的安装问题</a><br><a href="http://www.cnblogs.com/yun007/p/3710524.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/yun007/p/3710524.html" title="发布于2014-05-05 23:12">js时间格式转换</a><br></div>
+</div>
+
+
+	<div class="postDesc">posted on <span id="post-date">2014-05-03 17:48</span> <a href="http://www.cnblogs.com/yun007/">yun007</a> 阅读(<span id="post_view_count">11809</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=3705353" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/yun007/p/3705353.html#" onclick="AddToWz(3705353);return false;">收藏</a></div>
+</div>
+<script type="text/javascript">var allowComments=true,cb_blogId=140217,cb_entryId=3705353,cb_blogApp=currentBlogApp,cb_blogUserGuid='bb01da0d-00c1-e111-aa3f-842b2b196315',cb_entryCreatedDate='2014/5/3 17:48:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/yun007/p/3705353.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/yun007/p/3705353.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型工控、组态\仿真、建模CAD源码2018！</a><br><a href="https://www.cnblogs.com/cmt/p/8462669.html" target="_blank">【活动】杭州云栖·2050大会-追逐早上七八点钟的太阳-源点</a><br><a href="https://cloud.tencent.com/solution/la?fromSource=gwzcw.766790.766790.766790" target="_blank">【推荐】微信小程序一站式部署 多场景模板定制</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/solution/la?fromSource=gwzcw.766787.766787.766787" target="_blank"><img width="300" height="250" src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/24442-20180204214532873-867937199.jpg" alt="tencent0205"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/590623/" target="_blank">特斯拉开始在超级电池工厂安装世界最大太阳能屋顶</a><br> ·  <a href="https://news.cnblogs.com/n/590624/" target="_blank">苏宁易购：2017年净利润42.10亿元同比增497.66%</a><br> ·  <a href="https://news.cnblogs.com/n/590596/" target="_blank">周鸿祎：这是写区块链写得最好的一篇文章</a><br> ·  <a href="https://news.cnblogs.com/n/590604/" target="_blank">三星手机业务主管：我们在印度的销售额完胜小米</a><br> ·  <a href="https://news.cnblogs.com/n/590611/" target="_blank">欧盟反垄断机构：爱尔兰想撤诉需收齐苹果160亿美元欠税</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/34770/" target="_blank"><img width="468" height="60" src="./redis在windows下安装和PHP中使用 - yun007 - 博客园_files/24442-20171208101900738-116140477.jpg" alt="阿里云C2-1208"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/575255/" target="_blank">写给自学者的入门指南</a><br> ·  <a href="http://kb.cnblogs.com/page/578690/" target="_blank">和程序员谈恋爱</a><br> ·  <a href="http://kb.cnblogs.com/page/585734/" target="_blank">学会学习</a><br> ·  <a href="http://kb.cnblogs.com/page/588938/" target="_blank">优秀技术人的管理陷阱</a><br> ·  <a href="http://kb.cnblogs.com/page/590141/" target="_blank">作为一个程序员，数学对你到底有多重要</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+</div>
+<div id="leftcontent">
+	
+		<div id="leftcontentcontainer">
+			
+<!--done-->
+<div class="newsItem">
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/yun007/">yun007</a><br>园龄：<a href="https://home.cnblogs.com/u/yun007/" title="入园时间：2012-06-28">5年8个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/yun007/followers/">16</a><br>关注：<a href="https://home.cnblogs.com/u/yun007/followees/">6</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;bb01da0d-00c1-e111-aa3f-842b2b196315&#39;)">+加关注</a></div><script>getFollowStatus('bb01da0d-00c1-e111-aa3f-842b2b196315')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/01/01&#39;);return false;">&lt;</a></td><td align="center">2018年2月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/03/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td class="CalWeekendDay" align="center">3</td></tr><tr><td class="CalWeekendDay" align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td class="CalWeekendDay" align="center">10</td></tr><tr><td class="CalWeekendDay" align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td class="CalWeekendDay" align="center">17</td></tr><tr><td class="CalWeekendDay" align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td class="CalWeekendDay" align="center">24</td></tr><tr><td class="CalWeekendDay" align="center">25</td><td align="center">26</td><td align="center">27</td><td class="CalTodayDay" align="center">28</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td></tr><tr><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script><br>
+			<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/yun007/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/yun007/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/yun007/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/yun007/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/yun007/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="http://www.cnblogs.com/yun007/tag/js/">js</a>(13)</li><li><a href="http://www.cnblogs.com/yun007/tag/php/">php</a>(4)</li><li><a href="http://www.cnblogs.com/yun007/tag/thinkphp/">thinkphp</a>(4)</li><li><a href="http://www.cnblogs.com/yun007/tag/tp/">tp</a>(3)</li><li><a href="http://www.cnblogs.com/yun007/tag/c%2B%2B/">c++</a>(2)</li><li><a href="http://www.cnblogs.com/yun007/tag/css/">css</a>(2)</li><li><a href="http://www.cnblogs.com/yun007/tag/eclipse/">eclipse</a>(2)</li><li><a href="http://www.cnblogs.com/yun007/tag/java/">java</a>(2)</li><li><a href="http://www.cnblogs.com/yun007/tag/Jquery/">Jquery</a>(2)</li><li><a href="http://www.cnblogs.com/yun007/tag/%E8%A1%A8%E6%A0%BC/">表格</a>(2)</li><li><a href="http://www.cnblogs.com/yun007/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+		<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(78)</span></h3>
+		
+				<ul class="catList">
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_0" class="listitem" href="http://www.cnblogs.com/yun007/category/576665.html">ajax(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_1" class="listitem" href="http://www.cnblogs.com/yun007/category/574452.html">android</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_2" class="listitem" href="http://www.cnblogs.com/yun007/category/574923.html">apache(2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_3" class="listitem" href="http://www.cnblogs.com/yun007/category/480714.html">c/c++(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_4" class="listitem" href="http://www.cnblogs.com/yun007/category/586071.html">coreseek</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_5" class="listitem" href="http://www.cnblogs.com/yun007/category/479863.html">css(8)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_6" class="listitem" href="http://www.cnblogs.com/yun007/category/582808.html">curl(2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_7" class="listitem" href="http://www.cnblogs.com/yun007/category/577714.html">fancybox(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_8" class="listitem" href="http://www.cnblogs.com/yun007/category/576537.html">FullCalendar(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_9" class="listitem" href="http://www.cnblogs.com/yun007/category/479862.html">java(2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_10" class="listitem" href="http://www.cnblogs.com/yun007/category/576538.html">jquery(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_11" class="listitem" href="http://www.cnblogs.com/yun007/category/479864.html">js(18)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_12" class="listitem" href="http://www.cnblogs.com/yun007/category/579324.html">linux(5)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_13" class="listitem" href="http://www.cnblogs.com/yun007/category/574921.html">memcached(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_14" class="listitem" href="http://www.cnblogs.com/yun007/category/586072.html">mmseg</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_15" class="listitem" href="http://www.cnblogs.com/yun007/category/576931.html">mongodb</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_16" class="listitem" href="http://www.cnblogs.com/yun007/category/576934.html">mysql(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_17" class="listitem" href="http://www.cnblogs.com/yun007/category/574922.html">ngnix(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_18" class="listitem" href="http://www.cnblogs.com/yun007/category/480716.html">php(13)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_19" class="listitem" href="http://www.cnblogs.com/yun007/category/575814.html">redis(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_20" class="listitem" href="http://www.cnblogs.com/yun007/category/586070.html">sphinx</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_21" class="listitem" href="http://www.cnblogs.com/yun007/category/479899.html">svn(2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_22" class="listitem" href="http://www.cnblogs.com/yun007/category/565975.html">thinkphp(11)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_23" class="listitem" href="http://www.cnblogs.com/yun007/category/580321.html">widget</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_24" class="listitem" href="http://www.cnblogs.com/yun007/category/580277.html">安全(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_25" class="listitem" href="http://www.cnblogs.com/yun007/category/580276.html">并发(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_26" class="listitem" href="http://www.cnblogs.com/yun007/category/575815.html">缓存(2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_27" class="listitem" href="http://www.cnblogs.com/yun007/category/574453.html">手机开发</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_28" class="listitem" href="http://www.cnblogs.com/yun007/category/576932.html">数据库(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_29" class="listitem" href="http://www.cnblogs.com/yun007/category/608633.html">算法(1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_30" class="listitem" href="http://www.cnblogs.com/yun007/category/586073.html">中文分词</a></li>
+			
+				</ul>
+			
+	
+		<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(100)</span></h3>
+		
+				<ul class="catList">
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_0" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/09.html">2014年9月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_1" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/08.html">2014年8月 (4)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_2" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/07.html">2014年7月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_3" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/06.html">2014年6月 (17)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_4" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/05.html">2014年5月 (17)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_5" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/04.html">2014年4月 (13)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_6" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/03.html">2014年3月 (2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_7" class="listitem" href="http://www.cnblogs.com/yun007/archive/2014/02.html">2014年2月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_8" class="listitem" href="http://www.cnblogs.com/yun007/archive/2013/12.html">2013年12月 (2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_9" class="listitem" href="http://www.cnblogs.com/yun007/archive/2013/08.html">2013年8月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_10" class="listitem" href="http://www.cnblogs.com/yun007/archive/2013/07.html">2013年7月 (2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_11" class="listitem" href="http://www.cnblogs.com/yun007/archive/2013/06.html">2013年6月 (15)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_12" class="listitem" href="http://www.cnblogs.com/yun007/archive/2013/05.html">2013年5月 (17)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_13" class="listitem" href="http://www.cnblogs.com/yun007/archive/2013/04.html">2013年4月 (5)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_14" class="listitem" href="http://www.cnblogs.com/yun007/archive/2013/01.html">2013年1月 (2)</a></li>
+			
+				</ul>
+			
+	
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yun007/p/3739182.html#3647133">1. Re:nginx强制使用https访问(http跳转到https)</a></li>
+        <li class="recent_comment_body">使用百度的方式 太麻烦了 程序内部重定向不好使。全部都发到http上面了。蛋碎啊，还是直接转发到内部的https上面方便</li>
+        <li class="recent_comment_author">--纯v粹</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yun007/p/3888126.html#3440138">2. Re:nginx 反向代理apache服务器 配置java与PHP共存环境</a></li>
+        <li class="recent_comment_body">不错，赞一下</li>
+        <li class="recent_comment_author">--yuan.net</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yun007/p/3731636.html#3304312">3. Re:thinkphp计划任务使用cronRun</a></li>
+        <li class="recent_comment_body">没有用啊？楼主。他居然说页面载入错误，什么鬼</li>
+        <li class="recent_comment_author">--double_y</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yun007/p/3731636.html#3295887">4. Re:thinkphp计划任务使用cronRun</a></li>
+        <li class="recent_comment_body">楼主把tags.php文件打错了，打成了tages.php</li>
+        <li class="recent_comment_author">--hackcat</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yun007/p/3739182.html#3112504">5. Re:nginx强制使用https访问(http跳转到https)</a></li>
+        <li class="recent_comment_body">总结得非常好，学习了</li>
+        <li class="recent_comment_author">--调兵虎符</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/yun007/archive/2013/06/06/3121393.html">1. js遍历数组和遍历对象的区别(153805)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3739182.html">2. nginx强制使用https访问(http跳转到https)(114735)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3809231.html">3. Linux时间戳和标准时间的互转(22333)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3685170.html">4. 阿里云搭建SVN服务器(20687)</a></li><li><a href="http://www.cnblogs.com/yun007/archive/2013/06/07/3124303.html">5. SecureCRT常用命令(13198)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/yun007/p/3638164.html">1. thinkPHP 无法create，无法插入数据，提示非法数据对象(5)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3731636.html">2. thinkphp计划任务使用cronRun(3)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3739182.html">3. nginx强制使用https访问(http跳转到https)(2)</a></li><li><a href="http://www.cnblogs.com/yun007/archive/2013/04/16/3023916.html">4. node.js环境搭建以及入门级hello程序(2)</a></li><li><a href="http://www.cnblogs.com/yun007/archive/2013/06/06/3121393.html">5. js遍历数组和遍历对象的区别(1)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/yun007/p/3685170.html">1. 阿里云搭建SVN服务器(3)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3739182.html">2. nginx强制使用https访问(http跳转到https)(2)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3731636.html">3. thinkphp计划任务使用cronRun(1)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3888126.html">4. nginx 反向代理apache服务器 配置java与PHP共存环境(1)</a></li><li><a href="http://www.cnblogs.com/yun007/p/3759786.html">5. SVN Hook造成SVN提交速度慢的问题(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script></div>
+	
+</div>
+
+<!--done-->
+<div class="footer">
+	Powered by: <a href="http://www.cnblogs.com/">博客园</a>	模板提供：<a href="http://blog.hjenglish.com/">沪江博客</a>
+	Copyright ©2018 yun007
+</div>
+
+
+
+
+
+</body></html>
