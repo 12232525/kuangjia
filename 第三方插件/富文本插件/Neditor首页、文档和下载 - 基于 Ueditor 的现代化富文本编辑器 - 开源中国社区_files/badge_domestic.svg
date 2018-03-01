@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>badge_domestic</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="18" cy="18" r="18"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="36" height="36" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="项目详情" transform="translate(-697.000000, -174.000000)">
+            <g id="head" transform="translate(0.000000, 150.000000)">
+                <g id="badge_domestic" transform="translate(697.000000, 24.000000)">
+                    <use id="Oval-6" stroke="#FE5459" mask="url(#mask-2)" stroke-width="3" fill="#FAE7E7" xlink:href="#path-1"></use>
+                    <path d="M11.0822757,6 C9.97522472,6 9.07473341,6.90162726 9.07101595,8.00086422 L9,29 L17.9644861,25.1023559 L26.9289722,29 L26.9999882,8.00086422 C27.0037253,6.89581743 26.1176543,6 25.0022617,6 L11.0822757,6 Z" id="Shape" fill="#FE5459"></path>
+                    <path d="M14.490566,12.3250844 L14.490566,13.6996625 L17.25,13.6996625 L17.25,15.3667042 L14.9433962,15.3667042 L14.9433962,16.712036 L17.25,16.712036 L17.25,18.6276715 L14.1084906,18.6276715 L14.1084906,20.0022497 L21.9056604,20.0022497 L21.9056604,18.6276715 L20.5754717,18.6276715 L21.2688679,18.3059618 C21.0424528,17.7649044 20.759434,17.2677165 20.4481132,16.8143982 L19.2735849,17.2092238 C19.5566038,17.6186727 19.8113208,18.0866142 20.0377358,18.6276715 L18.75,18.6276715 L18.75,16.712036 L21.0566038,16.712036 L21.0566038,15.3667042 L18.75,15.3667042 L18.75,13.6996625 L21.495283,13.6996625 L21.495283,12.3250844 L14.490566,12.3250844 Z M24,10 L12,10 L12,23 L13.5,23 L13.5,22.4589426 L22.5,22.4589426 L22.5,23 L24,23 L24,10 Z M13.5,21.0258718 L13.5,11.4330709 L22.5,11.4330709 L22.5,21.0258718 L13.5,21.0258718 Z" id="国" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
