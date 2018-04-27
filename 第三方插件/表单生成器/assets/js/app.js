@@ -1,21 +1,32 @@
+////在这里定义分组 分组文件发昂在data目录下面
+
 define([
        "jquery" , "underscore" , "backbone"
        , "collections/snippets" , "collections/my-form-snippets"
        , "views/tab" , "views/my-form"
        , "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json"
-       , "text!templates/app/render.html",  "text!templates/app/about.html", 
+       , "text!templates/app/render.html",  "text!templates/app/about.html",
+    "text!data/example.json",
+
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
   , inputJSON, radioJSON, selectJSON, buttonsJSON
-  , renderTab, aboutTab
+  , renderTab
+  , aboutTab
+  , example
 ){
   return {
     initialize: function(){
 
       //Bootstrap tabs from json.
-      new TabView({
+        new TabView({
+            title: "Example"
+            , collection: new SnippetsCollection(JSON.parse(example))
+        });
+
+      /*new TabView({
         title: "Input"
         , collection: new SnippetsCollection(JSON.parse(inputJSON))
       });
@@ -30,7 +41,7 @@ define([
       new TabView({
         title: "Buttons"
         , collection: new SnippetsCollection(JSON.parse(buttonsJSON))
-      });
+      });*/
       new TabView({
         title: "Rendered"
         , content: renderTab
