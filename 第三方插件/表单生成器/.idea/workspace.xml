@@ -11,15 +11,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+      <file leaf-file-name="xadmin.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/data/xadmin.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1176">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="168">
+              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="snippet-templates.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/templates/snippet/snippet-templates.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order-list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../../ui/order-list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="30" selection-end-column="6" />
               <folding>
-                <marker date="1524792237767" expanded="false" signature="824:924" ph="{&quot;title&quot;: &quot;Input&quot;...}" />
-                <marker date="1524792237767" expanded="false" signature="945:1059" ph="{&quot;title&quot;: &quot;Radios / Checkboxes&quot;...}" />
-                <marker date="1524792237767" expanded="false" signature="1080:1182" ph="{&quot;title&quot;: &quot;Select&quot;...}" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -32,6 +50,9 @@
       <list>
         <option value="$PROJECT_DIR$/assets/js/data/example.json" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/assets/js/templates/snippet/daohang.html" />
+        <option value="$PROJECT_DIR$/assets/js/data/xadmin.json" />
+        <option value="$PROJECT_DIR$/assets/js/templates/snippet/snippet-templates.js" />
       </list>
     </option>
   </component>
@@ -90,6 +111,21 @@
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="data" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="表单生成器" type="b2602c69:ProjectViewProjectNode" />
+              <item name="表单生成器" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="表单生成器" type="b2602c69:ProjectViewProjectNode" />
+              <item name="表单生成器" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="snippet" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -123,12 +159,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524792040228</updated>
-      <workItem from="1524792041369" duration="206000" />
+      <workItem from="1524792041369" duration="800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206000" />
+    <option name="totallyTimeSpent" value="800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -177,20 +213,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/data/example.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="578" column="1" lean-forward="false" selection-start-line="578" selection-start-column="1" selection-end-line="578" selection-end-column="1" />
+        <state relative-caret-position="126">
+          <caret line="68" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="68" selection-end-column="1" />
+          <folding>
+            <element signature="e#4#1459#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/templates/snippet/daohang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="588">
+          <caret line="28" column="68" lean-forward="false" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
           <folding>
-            <marker date="1524792237767" expanded="false" signature="824:924" ph="{&quot;title&quot;: &quot;Input&quot;...}" />
-            <marker date="1524792237767" expanded="false" signature="945:1059" ph="{&quot;title&quot;: &quot;Radios / Checkboxes&quot;...}" />
-            <marker date="1524792237767" expanded="false" signature="1080:1182" ph="{&quot;title&quot;: &quot;Select&quot;...}" />
+            <marker date="1524792461349" expanded="false" signature="1000:1100" ph="{&quot;title&quot;: &quot;Input&quot;...}" />
+            <marker date="1524792461349" expanded="false" signature="1121:1235" ph="{&quot;title&quot;: &quot;Radios / Checkboxes&quot;...}" />
+            <marker date="1524792461349" expanded="false" signature="1256:1358" ph="{&quot;title&quot;: &quot;Select&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/data/xadmin.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/templates/snippet/snippet-templates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../ui/order-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="30" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

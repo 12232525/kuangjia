@@ -20,7 +20,10 @@ define(function(require) {
   , selectbasic              = require('text!templates/snippet/selectbasic.html')
   , selectmultiple           = require('text!templates/snippet/selectmultiple.html')
   , textarea                 = require('text!templates/snippet/textarea.html')
-  , textinput                = require('text!templates/snippet/textinput.html');
+  , textinput                = require('text!templates/snippet/textinput.html')
+  , daohang                = require('text!templates/snippet/daohang.html')
+
+  ;
 
   return {
     formname                   : formname
@@ -45,5 +48,6 @@ define(function(require) {
     , selectmultiple           : selectmultiple
     , textarea                 : textarea
     , textinput                : textinput
+    , daohang                   : daohang
   }
 });

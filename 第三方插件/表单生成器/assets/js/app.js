@@ -7,6 +7,7 @@ define([
        , "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json"
        , "text!templates/app/render.html",  "text!templates/app/about.html",
     "text!data/example.json",
+    "text!data/xadmin.json",
 
 ], function(
   $, _, Backbone
@@ -16,11 +17,18 @@ define([
   , renderTab
   , aboutTab
   , example
+  , xadmin
 ){
   return {
     initialize: function(){
 
       //Bootstrap tabs from json.
+
+        new TabView({
+            title: "X-Admin"
+            , collection: new SnippetsCollection(JSON.parse(xadmin  ))
+        });
+
         new TabView({
             title: "Example"
             , collection: new SnippetsCollection(JSON.parse(example))
